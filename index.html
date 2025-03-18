@@ -1,13 +1,189 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RX Loans - 貸款服務</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>榮鑫理財金融顧問</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
-<body>
-    <h1>歡迎來到 RX Loans</h1>
-    <p>您的最佳貸款選擇！</p>
+
+<body class="font-sans bg-gray-50">
+
+  <!-- Navbar -->
+<header class="bg-white shadow fixed w-full z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <!-- Logo + 公司名稱 -->
+      <div class="flex items-center space-x-3">
+        <img src="src/images/sy.jpg" alt="盛盈理財 Logo" class="h-10">
+        <span class="text-lg font-bold text-gray-800">盛盈理財金融顧問</span>
+      </div>
+      <!-- 導覽列 -->
+      <nav class="hidden md:flex space-x-6">
+        <a href="#" class="hover:text-orange-500">首頁</a>
+        <a href="#services" class="hover:text-orange-500">服務項目</a>
+        <a href="#cases" class="hover:text-orange-500">成功案例</a>
+        <a href="#notice" class="hover:text-orange-500">申貸須知</a>
+        <a href="#contact" class="hover:text-orange-500">聯絡我們</a>
+      </nav>
+      <!-- 行動裝置撥打電話 -->
+      <a href="tel:0988123456" class="bg-orange-500 text-white px-4 py-2 rounded-lg">立即來電</a>
+    </div>
+  </header>
+  
+
+  <!-- Hero -->
+  <section class="relative pt-28 h-[400px] flex items-center justify-center text-center text-white" style="background-image: url('src/images/finance.jpg'); background-size: cover; background-position: center;">
+    <!-- 全區塊黑色遮罩 -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  
+    <!-- 文字區塊 -->
+    <div class="relative z-10">
+      <h1 class="text-4xl font-bold">資金周轉 缺錢免煩惱</h1>
+      <p class="mt-4">快速｜保密｜彈性｜多樣方案</p>
+      <a href="#contact" class="mt-6 inline-block bg-orange-500 text-white px-6 py-3 rounded-lg">立即諮詢</a>
+    </div>
+  </section>
+  
+  
+  
+<!-- 服務項目 -->
+<section id="services" class="py-16 bg-gray-50">
+    <h2 class="text-3xl font-bold text-center mb-12">服務項目</h2>
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+  
+      <!-- 房屋貸款 -->
+      <div class="p-6 bg-white rounded-lg shadow text-center">
+        <div class="h-20 w-20 mx-auto mb-4 text-orange-500">
+          <i data-lucide="home" class="w-full h-full"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-2">房屋貸款</h3>
+        <p class="text-gray-600 leading-relaxed">
+          房貸二胎、三胎增貸，民間房貸協助轉銀行<br>
+          客製化資金方案，專業快速處理
+        </p>
+      </div>
+  
+      <!-- 個人信用貸款 -->
+      <div class="p-6 bg-white rounded-lg shadow text-center">
+        <div class="h-20 w-20 mx-auto mb-4 text-orange-500">
+          <i data-lucide="hand-coins" class="w-full h-full"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-2">個人信用貸款</h3>
+        <p class="text-gray-600 leading-relaxed">
+          勞保貸、無保人、免財力證明<br>
+          最迅速安全的資金方案
+        </p>
+      </div>
+  
+    </div>
+  </section>
+  
+  <!-- Lucide Icons JS -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  
+    
+  
+  
+
+<!-- 成功案例 -->
+<section id="cases" class="py-16 bg-white">
+    <h2 class="text-3xl font-bold text-center mb-12">成功案例</h2>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- 案例卡片 -->
+      <div class="bg-white rounded-lg shadow overflow-hidden relative">
+        <img src="/src/images/Self-employed.webp" alt="案例1" class="w-full aspect-square object-contain bg-gray-100">
+        <div class="p-4">
+          <h3 class="font-bold text-lg">O先生｜自營商貸款500萬</h3>
+          <p class="text-gray-600">改善方向：週轉資金、免財力申貸</p>
+        </div>
+        <!-- More 懸浮按鈕 -->
+        <a href="#" class="absolute bottom-0 right-0 m-3 px-4 py-2 bg-blue-500 text-white text-sm font-semibold rounded-tl-lg rounded-br-none rounded-tr-none rounded-bl-lg shadow-lg hover:bg-blue-600 transition">
+          More
+        </a>
+      </div>
+  
+      <!-- 第二張 -->
+      <div class="bg-white rounded-lg shadow overflow-hidden relative">
+        <img src="/src/images/Self-employed.webp" alt="案例2" class="w-full aspect-square object-contain bg-gray-100">
+        <div class="p-4">
+          <h3 class="font-bold text-lg">O小姐｜信用瑕疵整合貸</h3>
+          <p class="text-gray-600">改善方向：信用瑕疵整合</p>
+        </div>
+        <a href="#" class="absolute bottom-0 right-0 m-3 px-4 py-2 bg-blue-500 text-white text-sm font-semibold rounded-tl-lg rounded-br-none rounded-tr-none rounded-bl-lg shadow-lg hover:bg-blue-600 transition">
+          More
+        </a>
+      </div>
+  
+      <!-- 第三張 -->
+      <div class="bg-white rounded-lg shadow overflow-hidden relative">
+        <img src="/src/images/Self-employed.webp" alt="案例3" class="w-full aspect-square object-contain bg-gray-100">
+        <div class="p-4">
+          <h3 class="font-bold text-lg">O先生｜二胎貸300萬</h3>
+          <p class="text-gray-600">改善方向：房屋二胎貸款</p>
+        </div>
+        <a href="#" class="absolute bottom-0 right-0 m-3 px-4 py-2 bg-blue-500 text-white text-sm font-semibold rounded-tl-lg rounded-br-none rounded-tr-none rounded-bl-lg shadow-lg hover:bg-blue-600 transition">
+          More
+        </a>
+      </div>
+  
+    </div>
+  </section>
+  
+  
+
+  <!-- 常見問題（展開式） -->
+  <section id="faq" class="py-16 bg-white" x-data="{ selected: null }">
+    <h2 class="text-3xl font-bold text-center mb-8">常見問題</h2>
+    <div class="max-w-3xl mx-auto space-y-4">
+      <div class="border rounded-lg">
+        <button @click="selected !== 1 ? selected = 1 : selected = null" class="w-full flex justify-between p-4 text-left">
+          <span><strong>Q：</strong>貸款需要保證人嗎？</span><span x-show="selected !== 1">+</span><span x-show="selected === 1">−</span>
+        </button>
+        <div x-show="selected === 1" x-collapse class="p-4 border-t">不一定，視個案而定。</div>
+      </div>
+      <div class="border rounded-lg">
+        <button @click="selected !== 2 ? selected = 2 : selected = null" class="w-full flex justify-between p-4 text-left">
+          <span><strong>Q：</strong>信用瑕疵也能申請嗎？</span><span x-show="selected !== 2">+</span><span x-show="selected === 2">−</span>
+        </button>
+        <div x-show="selected === 2" x-collapse class="p-4 border-t">可先評估，有機會協助申辦。</div>
+      </div>
+      <div class="border rounded-lg">
+        <button @click="selected !== 3 ? selected = 3 : selected = null" class="w-full flex justify-between p-4 text-left">
+          <span><strong>Q：</strong>不動產共有可以貸嗎？</span><span x-show="selected !== 3">+</span><span x-show="selected === 3">−</span>
+        </button>
+        <div x-show="selected === 3" x-collapse class="p-4 border-t">部分可協助，視條件評估。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 申貸須知 -->
+  <section id="notice" class="py-16 bg-gray-100">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">申請貸款須知</h2>
+      <p class="text-gray-700 leading-loose">您可以依照自己的需求選擇適合您的方案。合法經營，一切都按融資法相關之規定且不收手續費，未核貸不收費。最短3個月至最長3年以上，無違約金，年利率2%~12%（依風險控管評分）。</p>
+    </div>
+  </section>
+
+  <!-- 聯絡表單 -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">聯絡我們</h2>
+      <form action="#" method="POST" class="space-y-4">
+        <input type="text" name="name" placeholder="姓名" required class="w-full p-3 rounded-lg">
+        <input type="tel" name="phone" placeholder="電話" required class="w-full p-3 rounded-lg">
+        <input type="text" name="line" placeholder="Line" required class="w-full p-3 rounded-lg">
+        <textarea name="message" placeholder="留言內容" rows="4" required class="w-full p-3 rounded-lg"></textarea>
+        <button type="submit" class="w-full bg-orange-500 text-white py-3 rounded-lg">送出</button>
+      </form>
+    </div>
+  </section>
+
 </body>
 </html>
+``
