@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 
 <head>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/rxloans-website/style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>榮鑫理財金融顧問</title>
@@ -17,7 +17,7 @@
   <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
     <!-- Logo + 公司名稱 -->
     <div class="flex items-center space-x-3">
-      <img src="src/images/rx.jpg" alt="榮鑫理財 Logo" class="h-10">
+      <img src="images/rx.jpg" alt="榮鑫理財 Logo" class="h-10">
       <span class="text-lg font-bold text-gray-800">榮鑫理財金融顧問</span>
     </div>
 
@@ -41,10 +41,11 @@
 
   <!-- 手機版側邊選單 -->
   <div 
-    class="fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity"
-    x-show="menuOpen"
-    x-transition.opacity
-    @click.away="menuOpen = false">
+  class="fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity"
+  x-show="menuOpen"
+  x-transition.opacity
+  @click.outside="menuOpen = false">
+
     
     <div class="fixed right-0 top-0 w-64 h-full bg-white shadow-md p-6 transform transition-transform"
          x-show="menuOpen"
@@ -170,7 +171,12 @@
 
   
   <!-- Lucide Icons JS -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    lucide.createIcons();
+  });
+</script>
   <script>
     lucide.createIcons();
   </script>
