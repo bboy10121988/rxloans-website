@@ -58,18 +58,19 @@
       <!-- 關閉按鈕 -->
       <button class="absolute top-4 right-4 text-gray-600" @click="menuOpen = false">✖</button>
 
-      <!-- 選單連結 -->
+      <!-- 選單連結 (點擊後自動關閉選單) -->
       <nav class="flex flex-col space-y-4 mt-8">
-        <a href="#" class="text-lg hover:text-[#2C5F64]">首頁</a>
-        <a href="#services" class="text-lg hover:text-[#2C5F64]">服務項目</a>
-        <a href="#cases" class="text-lg hover:text-[#2C5F64]">成功案例</a>
-        <a href="#notice" class="text-lg hover:text-[#2C5F64]">申貸須知</a>
-        <a href="#contact" class="text-lg hover:text-[#2C5F64]">聯絡我們</a>
+        <a href="#" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">首頁</a>
+        <a href="#services" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">服務項目</a>
+        <a href="#cases" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">成功案例</a>
+        <a href="#notice" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">申貸須知</a>
+        <a href="#contact" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">聯絡我們</a>
       </nav>
     </div>
 
   </div>
 </header>
+
 
   
 
