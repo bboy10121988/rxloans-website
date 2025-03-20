@@ -335,18 +335,47 @@
   </section>
 
   <!-- 聯絡表單 -->
-  <section id="contact" class="py-16 bg-white">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-8">聯絡我們</h2>
-      <form action="#" method="POST" class="space-y-4">
-        <input type="text" name="name" placeholder="姓名" required class="w-full p-3 rounded-lg">
-        <input type="tel" name="phone" placeholder="電話" required class="w-full p-3 rounded-lg">
-        <input type="text" name="line" placeholder="Line" required class="w-full p-3 rounded-lg">
-        <textarea name="message" placeholder="留言內容" rows="4" required class="w-full p-3 rounded-lg"></textarea>
-        <button type="submit" class="w-full bg-[#2C5F64] text-white py-3 rounded-lg">送出</button>
-      </form>
-    </div>
-  </section>
+<section id="contact" class="py-16 bg-white">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">聯絡我們</h2>
+    
+    <form id="contactForm" class="space-y-4">
+      <input type="text" id="name" name="name" placeholder="姓名" required class="w-full p-3 rounded-lg">
+      <input type="tel" id="phone" name="phone" placeholder="電話" required class="w-full p-3 rounded-lg">
+      <input type="text" id="line" name="line" placeholder="Line ID" required class="w-full p-3 rounded-lg">
+      <textarea id="message" name="message" placeholder="留言內容" rows="4" required class="w-full p-3 rounded-lg"></textarea>
+      <button type="submit" class="w-full bg-[#2C5F64] text-white py-3 rounded-lg">送出</button>
+    </form>
+
+    <p id="successMessage" class="hidden text-center text-green-600 mt-4">✅ 提交成功！我們會盡快與您聯絡。</p>
+  </div>
+</section>
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // 阻止表單預設提交行為
+    
+    let formData = {
+      name: document.getElementById("name").value,
+      phone: document.getElementById("phone").value,
+      line: document.getElementById("line").value,
+      message: document.getElementById("message").value
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbxox5erw--hU_6OOBnLPjLURLIw6nmNzViwwykg5dvc1ITVEk6M-Nkpo2O08MsMcUsv5Q/exec", {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    })
+    .then(() => {
+      document.getElementById("contactForm").reset(); // 清空表單
+      document.getElementById("successMessage").classList.remove("hidden"); // 顯示成功訊息
+    })
+    .catch(error => console.error("錯誤：", error));
+  });
+</script>
+
 <!-- 手機版底部固定按鈕 -->
 <div class="fixed bottom-0 left-0 w-full bg-white shadow-md p-4 flex justify-around items-center md:hidden">
   <!-- 立即來電 -->
