@@ -2,6 +2,7 @@
 <html lang="zh-Hant">
 
 <head>
+  <link rel="stylesheet" href="styles.css">
     <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
@@ -59,6 +60,7 @@
       <a href="#services" class="hover:text-[#2C5F64]">服務項目</a>
       <a href="#cases" class="hover:text-[#2C5F64]">成功案例</a>
       <a href="#notice" class="hover:text-[#2C5F64]">申貸須知</a>
+      <a href="#faq" class="hover:text-[#2C5F64]">常見問題</a>  <!-- 新增 FAQ -->
       <a href="#contact" class="hover:text-[#2C5F64]">聯絡我們</a>
     </nav>
 
@@ -101,6 +103,7 @@
         <a href="#services" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">服務項目</a>
         <a href="#cases" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">成功案例</a>
         <a href="#notice" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">申貸須知</a>
+        <a href="#faq" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">常見問題</a> <!-- 新增 FAQ -->
         <a href="#contact" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">聯絡我們</a>
       </nav>
     </div>
@@ -348,14 +351,35 @@
   </div>
 </section>
 
+<!-- 申貸須知 -->
+<section id="notice" class="py-16 bg-gray-100">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8">申請貸款須知</h2>
 
-  <!-- 申貸須知 -->
-  <section id="notice" class="py-16 bg-gray-100">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">申請貸款須知</h2>
-      <p class="text-gray-700 leading-loose">您可以依照自己的需求選擇適合您的方案。合法經營，一切都按融資法相關之規定且不收手續費，未核貸不收費。最短3個月至最長3年以上，無違約金，年利率2%~12%（依風險控管評分）。</p>
+    <div class="text-gray-700 space-y-4 leading-relaxed text-base text-left">
+      <p>
+        本公司所有貸款仲介服務，均依《中華民國現行法律》規定辦理，並致力於保障客戶權益，具體說明如下：
+      </p>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>合法經營：</strong>本公司依法設立，具備營業登記，交易安全透明。</li>
+        <li><strong>依法限制：</strong>本公司不辦理存款業務，不吸收存款，亦不從事銀行類金融業務。</li>
+        <li><strong>合理利率：</strong>年利率介於 <span class="text-[#2C5F64] font-semibold">2% ~ 16%</span>，不超過法定上限，依個案條件提供彈性方案。</li>
+        <li><strong>絕不預收費：</strong>核貸前不收任何費用（如手續費、保證金、審查費等），保障客戶權益。</li>
+        <li><strong>合法審查：</strong>所有申請皆依法進行身分與信用查核，確保流程合規、安全。</li>
+      </ul>
+
+      <p>
+        我們承諾提供<span class="font-semibold text-[#2C5F64]">合法、透明、安全</span>的貸款服務，誠信經營，絕不涉及非法放貸。
+      </p>
+      <p>
+        如有任何疑問，歡迎隨時
+        <a href="#contact" class="text-[#2C5F64] underline hover:opacity-80">聯絡我們</a>
+        進行免費專業諮詢。
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- 聯絡表單 -->
 <section id="contact" class="py-16 bg-white">
