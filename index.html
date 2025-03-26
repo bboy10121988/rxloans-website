@@ -543,13 +543,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<!-- 彈窗功能 JS -->
+<!-- 彈窗功能腳本 -->
 <script>
   function popupComponent() {
     return {
       showPopup: false,
       init() {
-        // 只在首頁觸發（可移除此判斷視需求）
+        // 僅首頁顯示彈窗（可視需求移除）
         if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
 
         const lastShown = localStorage.getItem('popup_shown');
@@ -560,23 +560,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           setTimeout(() => {
             this.showPopup = true;
             localStorage.setItem('popup_shown', now.toISOString());
-          }, 3000); // 延遲顯示彈窗時間（毫秒）
+          }, 3000); // 彈窗延遲顯示時間
         }
       },
       goToCases() {
+        // GA、FB 追蹤事件
         if (typeof gtag !== 'undefined') {
           gtag('event', 'popup_case_click', { event_category: 'engagement' });
         }
         if (typeof fbq !== 'undefined') {
           fbq('trackCustom', 'PopupCaseClick');
         }
+
+        // 隱藏彈窗
         this.showPopup = false;
-        window.location.href = '#cases';
+
+        // 延遲跳轉（避免 transition 中斷）
+        setTimeout(() => {
+          const target = document.querySelector('#cases');
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' }); // 平滑滾動跳轉
+          }
+        }, 300);
       }
     };
   }
 </script>
-
 
 
 
