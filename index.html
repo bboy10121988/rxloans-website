@@ -2,24 +2,20 @@
 <html lang="zh-Hant">
 
 <head>
-  <style>
-  [x-cloak] {
-    display: none !important;
-  }
-</style>
-
   <link rel="stylesheet" href="styles.css">
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5VNPQDL8');</script>
-<!-- End Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:''; 
+    j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PZRVPJPR');
+  </script>
+  <!-- End Google Tag Manager -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="榮鑫理財金融顧問提供房屋貸款、信用貸款、企業貸款、汽車貸款，幫助客戶解決資金問題，合法經營，服務期間不先收費。">
+  <meta name="description" content="榮鑫理財金融顧問提供房屋貸款、信用貸款、企業貸款、汽車貸款，幫助客戶解決資金問題，合法經營，無手續費。">
   <meta name="keywords" content="貸款,房貸,信貸,企業貸款,車貸,信用瑕疵貸款,融資,榮鑫理財">
   <meta name="author" content="榮鑫理財金融顧問">
   <meta property="og:title" content="榮鑫理財金融顧問 - 專業貸款諮詢">
@@ -29,34 +25,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="robots" content="index, follow">
 
   <title>榮鑫理財金融顧問</title>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FinancialService",
-  "name": "榮鑫理財金融顧問",
-  "image": "https://rxloans.tw/src/images/finance.jpg",
-  "url": "https://rxloans.tw",
-  "logo": "https://rxloans.tw/src/images/rx.jpg",
-  "description": "提供房屋貸款、信用貸款、汽車貸款、企業貸款等合法安全的融資服務，信用不良也可協助申辦，免費諮詢不預收。",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "彰化縣北斗鎮居仁里光仁街159巷11號1樓",
-    "addressLocality": "彰化縣",
-    "postalCode": "521",
-    "addressCountry": "TW"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+886-976-172027",
-    "contactType": "Customer Service",
-    "areaServed": "TW"
-  },
-  "sameAs": [
-    "https://lin.ee/zPhiUUg"
-  ]
-}
-</script>
-
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -71,10 +39,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <body class="font-sans bg-gray-50">
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VNPQDL8"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) 放置於 <body> 第一行 -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZRVPJPR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager -->
   <!-- Navbar -->
 <header class="bg-white shadow fixed w-full z-50" x-data="{ menuOpen: false }">
   <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
@@ -95,7 +65,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </nav>
 
     <!-- 桌面版「立即來電」按鈕 -->
-    <a id="btn-call-desktop" href="tel:0976172027" class="hidden md:inline bg-[#2C5F64] text-white px-4 py-2 rounded-lg">立即來電</a>
+    <a href="tel:0976172027" class="hidden md:inline bg-[#2C5F64] text-white px-4 py-2 rounded-lg">立即來電</a>
 
     <!-- 手機版「導覽選單」按鈕 -->
     <button class="block md:hidden p-2 rounded-lg bg-[#2C5F64] text-white" @click="menuOpen = !menuOpen">
@@ -105,7 +75,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- 手機版側邊選單 -->
   <div 
-    x-cloak
     class="fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity"
     x-show="menuOpen"
     x-transition:enter="transition ease-out duration-300"
@@ -155,8 +124,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="relative z-10">
       <h1 class="text-4xl font-bold">專業理財顧問</h1>
       <p class="mt-4">一時的周轉　永遠的服務</p>
-      <a id="btn-consult-hero" href="https://lin.ee/zPhiUUg" class="mt-6 inline-block bg-[#2C5F64] text-white px-6 py-3 rounded-lg">立即諮詢</a>
-
+      <a href="https://lin.ee/zPhiUUg" class="mt-6 inline-block bg-[#2C5F64] text-white px-6 py-3 rounded-lg">立即諮詢</a>
     </div>
   </section>
   
@@ -265,39 +233,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
 
 <!-- 成功案例 -->
-<section id="cases" class="py-16 bg-white">
-    <h2 class="text-3xl font-bold text-center mb-12">成功案例</h2>
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <!-- 案例卡片 -->
-      <div class="bg-white rounded-lg shadow overflow-hidden relative">
-        <img src="/src/images/case1.png" alt="案例1" class="w-full aspect-square object-contain bg-gray-100">
-        <div class="p-4">
-          <h3 class="font-bold text-lg">王先生｜成功獲得500萬週轉金</h3>
-          <p class="text-gray-600">解決資金周轉難題，免財力輕鬆申貸！</p>
-        </div>
-      </div>
-  
-      <!-- 第二張 -->
-      <div class="bg-white rounded-lg shadow overflow-hidden relative">
-        <img src="/src/images/case2.png" alt="案例2" class="w-full aspect-square object-contain bg-gray-100">
-        <div class="p-4">
-          <h3 class="font-bold text-lg">劉小姐｜擺脫信用瑕疵，成功整合貸款</h3>
-          <p class="text-gray-600">信用評分低？我們幫助成功整合，重建財務信譽！</p>
-        </div>
-      </div>
-  
-      <!-- 第三張 -->
-      <div class="bg-white rounded-lg shadow overflow-hidden relative">
-        <img src="/src/images/case3.png" alt="案例3" class="w-full aspect-square object-contain bg-gray-100">
-        <div class="p-4">
-          <h3 class="font-bold text-lg">蔡先生｜成功申辦300萬二胎貸款</h3>
-          <p class="text-gray-600">活用房屋資產，低利率獲得充足資金！</p>
-        </div>
-      </div>
-  
-    </div>
+<section id="cases" class="py-16 bg-white" x-data="{ showAll: false }">
+  <h2 class="text-3xl font-bold text-center mb-12">成功案例</h2>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- 三張靜態圖片 -->
+      <img src="src/images/case1.png" alt="案例圖片1" class="rounded-lg shadow">
+      <img src="src/images/case2.png" alt="案例圖片2" class="rounded-lg shadow">
+      <img src="src/images/case3.png" alt="案例圖片3" class="rounded-lg shadow">
+
+      <!-- 案例卡片們 -->
+      <template x-for="(caseItem, index) in casesData" :key="index">
+          <div class="bg-white rounded-lg shadow overflow-hidden group" x-show="showAll || index < 3">
+              <div class="p-4">
+                  <div class="flex justify-between items-stretch h-full">
+                      <div class="flex-1 pr-4">
+                          <h3 class="font-bold text-lg" x-text="caseItem.title"></h3>
+                          <p class="text-gray-600 mt-2" x-text="caseItem.description"></p>
+                      </div>
+                      <button class="bg-[#2C5F64] hover:bg-[#1E4A4E] text-white px-6 rounded-l-2xl rounded-r-none flex items-center justify-center transition-colors h-auto min-h-[100%]">
+                          More
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </template>
+
+  </div>
+
+  <div class="text-center mt-10">
+      <button @click="showAll = !showAll" class="bg-[#2C5F64] hover:bg-[#1E4A4E] text-white py-2 px-4 rounded-lg">
+          <span x-text="showAll ? '收起案例' : '展開更多案例'"></span>
+      </button>
+  </div>
+
+  <script>
+      const casesData = [
+          { title: '陳小姐｜房貸增貸1680萬', description: '陳小姐因家庭資金調度需求，規劃辦理貸款。過去數年間，婆婆曾存放800萬元於陳小姐帳戶，近期因個人需求需動用該筆資金...' },
+          { title: '劉小姐｜債務整合成功', description: '劉小姐在鼎泰豐工作，有薪轉勞保，月收入大約在4萬多，但因為信用卡刷爆，每個月還有其他貸款要繳款所以幾乎入不敷出...' },
+          { title: '黃小姐｜困難條件成功購車', description: '黃小姐想買車，但因為她的條件問題，很多家車行都無法幫忙。後來，她找到了我們公司，我們評估後發現可以幫她辦理...' },
+          { title: '羅先生｜信貸核准93萬', description: '羅先生近期因投資虛擬貨幣，不慎遭遇詐騙，導致損失數十萬元，進而影響到日常生活品質。由於擔心家人得知此事...' },
+          { title: '黃先生｜21歲實現餐車夢', description: '21歲的黃先生一直想開一間餐車，實現自己的創業夢。但因為家裡的關係，他沒有親人可以幫助他，只能靠自己...' },
+          { title: '許小姐｜醫療信貸30萬', description: '許小姐因為家人生病需要一筆資金治療，但是她的條件並不理想本身是信用小白，過去曾有融資本票裁定的紀錄...' },
+          { title: '游小姐｜土地抵押創新解套', description: '游小姐她因為沒有薪轉和勞保，所以銀行不願意讓他申請貸款。她已經向很多家銀行和民間借貸機構資訊，但都沒有辦法解決問題...' },
+          { title: '黃小姐｜成功購入Lexus', description: '黃小姐一直希望能擁有一台合適的代步車，提升日常出行的便利性。然而，過去在其他金融機構申請車貸時，因財力條件不足...' },
+          { title: '高先生｜23歲核貸50萬', description: '23歲大學剛畢業的高先生，現職工作年資4個月，月收入2.9萬，從未辦理過銀行的貸款，這意味著沒有過去的貸款紀錄可供參考...' },
+          { title: '曾先生｜28萬急救愛犬', description: '曾先生的狗狗生病了，需要一筆醫療費用，但是他已經沒有多餘的錢可以支付。因為他的信用卡早就刷爆了，還有好幾筆信貸要還...' },
+          { title: '林小姐｜當鋪代償增貸', description: '林小姐的愛車因資金需求，曾在當鋪辦理借款，但由於當鋪利息較高，使得財務負擔逐漸加重。為了降低利息支出...' },
+          { title: '陳先生｜108萬債務整合', description: '陳先生近期因財務壓力增加，信用卡負擔過高，再加上短期內頻繁申請貸款導致銀行查詢紀錄過多，影響貸款審核...' },
+          { title: '廖先生｜信用修復成功', description: '廖先生因為想要降低貸款利率，所以來找我們公司辦理信貸。不過一開始，由於聯徵紀錄查詢過多，銀行一時無法批准他的申請...' },
+          { title: '李先生｜房仲新人購車', description: '半工半讀剛畢業的李先生，目前是一名房仲業者，需要一台代步用汽車，但他年資僅有7個月，名下一筆信貸10萬只繳款一期...' },
+          { title: '王先生｜130萬投資貸款', description: '王先生因資金需求，希望投資虛擬貨幣，因此我們協助他以不動產貸款，成功核准130萬元。對保完成後，我們準備將資料交給代書...' },
+          { title: '周先生｜400萬醫療貸款', description: '周先生，是一位年過40靠著每月股東分紅過活的中年男子，他有房、有車，是人人都有的目標。不過，他的身體每況愈下...' }
+      ];
+  </script>
+
 </section>
+
 
   
 
@@ -458,12 +451,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- 手機版底部固定按鈕 -->
 <div class="fixed bottom-0 left-0 w-full bg-white shadow-md p-4 flex justify-around items-center md:hidden">
   <!-- 立即來電 -->
-  <a id="btn-call-mobile" href="tel:0976172027" class="flex-1 text-center bg-[#2C5F64] text-white py-3 rounded-lg mx-2">
+  <a href="tel:0976172027" class="flex-1 text-center bg-[#2C5F64] text-white py-3 rounded-lg mx-2">
     立即來電
   </a>
   <!-- 立即諮詢 (LINE) -->
-  <a id="btn-consult-mobile" href="https://lin.ee/zPhiUUg" target="_blank" class="flex-1 text-center bg-green-500 text-white py-3 rounded-lg mx-2">
-  立即諮詢
+  <a href="https://lin.ee/zPhiUUg" target="_blank" class="flex-1 text-center bg-green-500 text-white py-3 rounded-lg mx-2">
+    立即諮詢
   </a>
 </div>
 <!-- 網站頁尾 Footer -->
@@ -499,7 +492,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
       <h3 class="text-base font-semibold mb-4 border-b border-white/20 pb-2">聯絡方式</h3>
       <ul class="space-y-1 leading-relaxed">
-        <li>電話：<a id="btn-call-footer" href="tel:0976172027" class="underline hover:opacity-80">0976-172-027</a></li>
+        <li>電話：<a href="tel:0976172027" class="underline hover:opacity-80">0976-172-027</a></li>
         <li>LINE 諮詢：<a href="https://lin.ee/zPhiUUg" target="_blank" class="underline hover:opacity-80">立即加入</a></li>
       </ul>
     </div>
@@ -516,79 +509,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-
-<!-- 成功案例彈窗 -->
-<div 
-  x-data="{...popupComponent()}" 
-  x-init="init" 
-  x-show="showPopup" 
-  x-cloak 
-  x-transition 
-  class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
->
-
-  <div class="bg-white p-6 rounded-xl shadow-lg w-11/12 max-w-md relative">
-    <!-- 關閉按鈕 -->
-    <button 
-      @click="showPopup = false" 
-      class="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-xl"
-    >×</button>
-
-    <!-- 標題 -->
-    <h3 class="text-xl font-bold text-gray-800 mb-2">看看真實成功案例</h3>
-
-    <!-- 內容 -->
-    <p class="text-gray-600 mb-4">
-      信用有瑕疵也能申辦？看我們如何幫助客戶順利過件，真實案例完整公開。
-    </p>
-
-    <!-- CTA 按鈕 -->
-    <button 
-    data-gtm="popup-case-button"
-    @click="goToCases"
-    class="w-full text-center bg-[#2C5F64] text-white py-3 rounded-lg hover:opacity-90"
-    >
-      前往案例頁面
-    </button>
-  </div>
-</div>
-
-<!-- 彈窗功能腳本 -->
-<script>
-  function popupComponent() {
-    return {
-      showPopup: false,
-      init() {
-        // 僅首頁顯示彈窗（可視需求移除）
-        if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
-
-        setTimeout(() => {
-          this.showPopup = true;
-        }, 3000); // 彈窗延遲顯示時間（毫秒）
-      },
-      goToCases() {
-        // GA、FB 追蹤事件
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'popup_case_click', { event_category: 'engagement' });
-        }
-        if (typeof fbq !== 'undefined') {
-          fbq('trackCustom', 'PopupCaseClick');
-        }
-
-        // 隱藏彈窗
-        this.showPopup = false;
-
-        // 延遲跳轉（避免 transition 中斷）
-        setTimeout(() => {
-          const target = document.querySelector('#cases');
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 300);
-      }
-    };
-  }
-</script>
 
 
 
