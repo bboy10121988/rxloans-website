@@ -509,11 +509,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 
 
+<!-- Alpine.js 防止閃現的樣式 -->
+<style>
+  [x-cloak] { display: none !important; }
+</style>
+
 <!-- 彈窗區塊 -->
 <div 
   x-data="{ showPopup: false }"
   x-init="setTimeout(() => showPopup = true, 3000)"
   x-show="showPopup"
+  x-cloak
   x-transition
   class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
 >
@@ -531,11 +537,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </p>
 
     <!-- CTA 按鈕 -->
-    <a href="https://rxloans.tw/#cases" class="block text-center bg-[#2C5F64] text-white py-3 rounded-lg hover:opacity-90">
+    <a href="https://rxloans.tw/#cases" 
+       class="block text-center bg-[#2C5F64] text-white py-3 rounded-lg hover:opacity-90">
       前往案例頁面
     </a>
   </div>
 </div>
+
 
 
 </body>
