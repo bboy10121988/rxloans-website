@@ -232,64 +232,367 @@
   
   
 
-<!-- 成功案例 -->
-<section id="cases" class="py-16 bg-white" x-data="{ showAll: false }">
-  <h2 class="text-3xl font-bold text-center mb-12">成功案例</h2>
+<!-- 成功案例區塊 -->
+<section id="cases" class="py-16 bg-white">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">成功案例</h2>
 
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-
-      <!-- 三張靜態圖片 -->
-      <img src="src/images/case1.png" alt="案例圖片1" class="rounded-lg shadow">
-      <img src="src/images/case2.png" alt="案例圖片2" class="rounded-lg shadow">
-      <img src="src/images/case3.png" alt="案例圖片3" class="rounded-lg shadow">
-
-      <!-- 案例卡片們 -->
-      <template x-for="(caseItem, index) in casesData" :key="index">
-          <div class="bg-white rounded-lg shadow overflow-hidden group" x-show="showAll || index < 3">
-              <div class="p-4">
-                  <div class="flex justify-between items-stretch h-full">
-                      <div class="flex-1 pr-4">
-                          <h3 class="font-bold text-lg" x-text="caseItem.title"></h3>
-                          <p class="text-gray-600 mt-2" x-text="caseItem.description"></p>
-                      </div>
-                      <button class="bg-[#2C5F64] hover:bg-[#1E4A4E] text-white px-6 rounded-l-2xl rounded-r-none flex items-center justify-center transition-colors h-auto min-h-[100%]">
-                          More
-                      </button>
-                  </div>
-              </div>
+    <div class="space-y-6">
+      <!-- 案例1 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">陳小姐｜房貸增貸1680萬</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">陳小姐因家庭資金調度需求，規劃辦理貸款。過去數年間，婆婆曾存放 800 萬元於陳小姐的帳戶，期間資金已陸續動用。近期，婆婆因個人需求需動用該筆資金，陳小姐因此決定申請貸款，以歸還婆婆款項...</p>
+          <div class="full-content hidden space-y-3">
+            <p>陳小姐因家庭資金調度需求，規劃辦理貸款。過去數年間，婆婆曾存放 800 萬元於陳小姐的帳戶，期間資金已陸續動用。近期，婆婆因個人需求需動用該筆資金，陳小姐因此決定申請貸款，以歸還婆婆款項，同時優化財務狀況。</p>
+            <p>為了獲得更優惠的貸款條件，陳小姐選擇透過房貸增貸及降息轉貸至新的銀行，以降低貸款利息支出。在審慎評估財務狀況及銀行條件後，最終成功核准1,680 萬元貸款，順利完成增貸與降息轉貸，不僅解決了資金需求，也有效減輕了未來的利息負擔。</p>
+            <p>此次貸款方案的成功執行，讓陳小姐能夠在兼顧家庭財務穩定的同時，獲得更具彈性的資金調度，達成最適合的財務規劃目標。</p>
           </div>
-      </template>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
 
+      <!-- 案例2 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">劉小姐｜債務整合成功</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">劉小姐在鼎泰豐工作，有薪轉勞保，月收入大約在4萬多，但因為信用卡刷爆，每個月還有其他貸款要繳款所以幾乎入不敷出，壓力很大...</p>
+          <div class="full-content hidden space-y-3">
+            <p>劉小姐在鼎泰豐工作，有薪轉勞保，月收入大約在4萬多，但因為信用卡刷爆，每個月還有其他貸款要繳款所以幾乎入不敷出，壓力很大。</p>
+            <p>成功申請貸款整合信用卡債務，降低月付擔。這次的經驗讓劉小姐學會了理財的重要性，以後更謹慎使用信用卡，讓生活變得更輕鬆。</p>
+            <p>我們協助劉小姐將多筆高利率信用卡債務整合為單一低利率貸款，月付金從$18,000降至$9,800，利息支出減少45%，大幅改善她的財務狀況。</p>
+          </div>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 案例3 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">黃小姐｜困難條件成功購車</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">黃小姐想買車，但因為她的條件問題，很多家車行都無法幫忙。後來，她找到了我們公司，我們評估後發現可以幫她辦理。於是，我們迅速處理了所有事宜...</p>
+          <div class="full-content hidden space-y-3">
+            <p>黃小姐想買車，但因為她的條件問題，很多家車行都無法幫忙。後來，她找到了我們公司，我們評估後發現可以幫她辦理。於是，我們迅速處理了所有事宜，順利幫黃小姐解決了問題。黃小姐非常感謝我們，因為她問了很多家店，沒有人能幫她，但我們成功解決了她的困難。</p>
+            <p>我們為黃小姐量身打造專屬方案，最終成功核貸85萬元購車款，利率僅3.99%，讓她順利購得理想車款。</p>
+          </div>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 案例4 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">羅先生｜信貸核准93萬</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">羅先生近期因投資虛擬貨幣，不慎遭遇詐騙，導致損失數十萬元，進而影響到日常生活品質。由於擔心家人得知此事，他希望能透過信貸進行資金週轉...</p>
+          <div class="full-content hidden space-y-3">
+            <p>羅先生近期因投資虛擬貨幣，不慎遭遇詐騙，導致損失數十萬元，進而影響到日常生活品質。由於擔心家人得知此事，他希望能透過信貸進行資金週轉，以穩定財務狀況，逐步調整經濟規劃。</p>
+            <p>在綜合考量羅先生的財務條件後，成功核准93 萬元信貸，讓他能夠迅速獲得資金支持，緩解當前的經濟壓力，並維持正常的生活開銷。</p>
+            <p>此次貸款方案不僅解決了短期資金需求，也為羅先生提供了更充裕的資金調度空間，幫助他重新規劃財務，逐步恢復穩定的經濟狀況。</p>
+          </div>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 案例5 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">黃先生｜21歲實現餐車夢</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">21歲的黃先生一直想開一間餐車，實現自己的創業夢。但因為家裡的關係，他沒有親人可以幫助他，只能靠自己。他用奶奶贈與的房子來申請房貸...</p>
+          <div class="full-content hidden space-y-3">
+            <p>21歲的黃先生一直想開一間餐車，實現自己的創業夢。但因為家裡的關係，他沒有親人可以幫助他，只能靠自己。他用奶奶贈與的房子來申請房貸，但因為他只持有一半的產權，所以很多銀行都無法協助他。</p>
+            <p>最後黃先生他找到我們團隊我們成功協助黃先生申請房貸。創業的路雖然不容易，但黃先生沒有放棄，我們也沒有放棄！</p>
+            <p>最終核貸150萬元，年利率2.88%，讓黃先生順利購置餐車設備，現已穩定經營8個月。</p>
+          </div>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 案例6 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">許小姐｜醫療信貸30萬</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">許小姐因為家人生病需要一筆資金治療，但是她的條件並不理想本身是信用小白，過去曾有融資本票裁定的紀錄，加上年紀輕、工作年資短...</p>
+          <div class="full-content hidden space-y-3">
+            <p>許小姐因為家人生病需要一筆資金治療，但是她的條件並不理想本身是信用小白，過去曾有融資本票裁定的紀錄，加上年紀輕、工作年資短，讓申請貸款變得更加困難。</p>
+            <p>為了找到合適的貸款方案，許小姐在網路上也諮詢了許多間，最終選擇了我們，後續詢問過客戶選擇我們的原因，是因為我們的處理速度與回覆效率都比其他家更快。</p>
+            <p>經過努力，我們成功幫助許小姐申請到30萬的信貸，並且申辦一張信用卡，讓她能夠順利籌措資金，解決眼前的困境。這次的經驗不僅讓許小姐順利獲得資金，也讓她對於信用與財務規劃有了更深的了解。</p>
+          </div>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 案例7 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">游小姐｜土地抵押創新解套</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">游小姐她因為沒有薪轉和勞保，所以銀行不願意讓他申請貸款。她已經向很多家銀行和民間借貸機構資訊，但都沒有辦法解決問題，讓她非常煩惱...</p>
+          <div class="full-content hidden space-y-3">
+            <p>游小姐她因為沒有薪轉和勞保，所以銀行不願意讓他申請貸款。她已經向很多家銀行和民間借貸機構資訊，但都沒有辦法解決問題，讓她非常煩惱。</p>
+            <p>後來，她找到我們公司，希望能夠得到幫助。我們仔細了解她的情況，發現她有一塊土地抵押在代書那裡，換取了一筆借款。</p>
+            <p>我們公司決定用買賣的方式，把這塊土地從代書那裡買下來，然後把剩下的錢給游小姐。不但幫她還清了一筆債務，還讓她手上有週轉金可以運用，生活變得輕鬆多了。</p>
+          </div>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 案例8 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">黃小姐｜成功購入Lexus</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">黃小姐一直希望能擁有一台合適的代步車，提升日常出行的便利性。然而，過去在其他金融機構申請車貸時，因財力條件不足，未能成功購買心儀的車款...</p>
+          <div class="full-content hidden space-y-3">
+            <p>黃小姐一直希望能擁有一台合適的代步車，提升日常出行的便利性。然而，過去在其他金融機構申請車貸時，因財力條件不足，未能成功購買心儀的車款，讓她一度感到失望。</p>
+            <p>後來，黃小姐找到我們，透過我們的資源與專業規劃，量身打造適合她的貸款方案。經過詳細評估與配合，最終成功核准貸款，順利購買 Lexus CT200h，圓滿達成購車心願。</p>
+            <p>此次貸款方案不僅幫助黃小姐克服財務門檻，也讓她順利入手理想車款，實現更舒適便捷的移動生活。核貸金額120萬元，利率3.5%，分60期償還。</p>
+          </div>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 案例9 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">高先生｜23歲核貸50萬</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">23歲大學剛畢業的高先生，現職工作年資4個月，月收入2.9萬，從未辦理過銀行的貸款，這意味著沒有過去的貸款紀錄可供參考。雖然高先生有使用一張信用卡...</p>
+          <div class="full-content hidden space-y-3">
+            <p>23歲大學剛畢業的高先生，現職工作年資4個月，月收入2.9萬，從未辦理過銀行的貸款，這意味著沒有過去的貸款紀錄可供參考。雖然高先生有使用一張信用卡，額度是2萬，但他在半年內有過一次逾期繳款一個月的紀錄，這對於申請信用貸款上又是一大難題。</p>
+            <p>高先生名下目前僅有一筆25萬機車貸款，且已正常繳款12期。這代表著高先生有一定的還款能力，但因機車貸款利率較高，高先生想藉由辦理信貸的方式將機車貸款清償，來降低自己的負擔，並讓自己能有一筆緊急備用金。</p>
+            <p>在與高先生深入溝通後，我們順利幫助他成功核貸了50萬元的信貸。不但減輕每月負擔，且對於我們的服務及減免開辦費用感到非常滿意。在兩個月後，高先生還介紹了客戶給我們。</p>
+          </div>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 案例10 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">曾先生｜28萬急救愛犬</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">曾先生的狗狗生病了，需要一筆醫療費用，但是他已經沒有多餘的錢可以支付。因為他的信用卡早就刷爆了，還有好幾筆信貸要還，每個月的還款壓力非常大...</p>
+          <div class="full-content hidden space-y-3">
+            <p>曾先生的狗狗生病了，需要一筆醫療費用，但是他已經沒有多餘的錢可以支付。因為他的信用卡早就刷爆了，還有好幾筆信貸要還，每個月的還款壓力非常大。</p>
+            <p>而且他的貸款有遲繳的問題，讓情況變得更糟糕，這些問題讓他感到很煩惱，也不知道該怎麼辦。然而他在網路上詢問過多間貸款公司後，最終找到了我們。</p>
+            <p>協助他辦理融資的汽車圓融，雖然被降貸核准了28萬，但曾先生也拿到了足夠治療狗狗的費用。後續我們協助他把名下所有的銀行信貸以及信用卡協商，讓他不用再擔心繳不出錢。雖然後續狗狗沒有救回來，但是曾先生協商後月付金大大的降低了，可以慢慢還清貸款，讓生活回到正軌。</p>
+          </div>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 案例11 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">林小姐｜當鋪代償增貸</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">林小姐的愛車因資金需求，曾在當鋪辦理借款，但由於當鋪利息較高，使得財務負擔逐漸加重。為了降低利息支出，她希望能儘快清償當鋪借款...</p>
+          <div class="full-content hidden space-y-3">
+            <p>林小姐的愛車因資金需求，曾在當鋪辦理借款，但由於當鋪利息較高，使得財務負擔逐漸加重。為了降低利息支出，她希望能儘快清償當鋪借款，尋求更合理的資金規劃方案。</p>
+            <p>在我們的協助下，先幫林小姐代償當鋪借款，再成功辦理汽車增貸，最終順利獲得核准。不僅成功清償了當鋪高利借款，還額外獲得一筆資金，進一步處理名下其他高利率貸款。</p>
+            <p>此次貸款規劃大幅降低每月還款負擔，讓財務狀況更為穩定。不僅幫助林小姐解決高息壓力，還讓她擁有更靈活的資金運用空間，生活品質也獲得改善。</p>
+          </div>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 案例12 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">陳先生｜108萬債務整合</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">陳先生近期因財務壓力增加，信用卡負擔過高，再加上短期內頻繁申請貸款導致銀行查詢紀錄過多，影響貸款審核，加重了資金周轉困難...</p>
+          <div class="full-content hidden space-y-3">
+            <p>陳先生近期因財務壓力增加，信用卡負擔過高，再加上短期內頻繁申請貸款導致銀行查詢紀錄過多，影響貸款審核，加重了資金周轉困難。為了有效減輕負擔，他希望能找到合適的方案來整合債務，改善財務狀況。</p>
+            <p>在我們的協助下，先提供代墊借款，協助處理部分信用卡債務，同時為陳先生規劃3 個月的信用培養與財力提升方案。</p>
+            <p>透過精準的財務規劃與信用管理，3 個月後，成功核貸 108 萬元，順利整合名下債務，不僅減少了高額信用卡利息負擔，也讓還款壓力大幅降低。此次貸款規劃更讓他的信用狀況獲得改善，財務結構更穩健。</p>
+          </div>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 案例13 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">廖先生｜信用修復成功</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">廖先生因為想要降低貸款利率，所以來找我們公司辦理信貸。不過一開始，由於聯徵紀錄查詢過多，銀行一時無法批准他的申請...</p>
+          <div class="full-content hidden space-y-3">
+            <p>廖先生因為想要降低貸款利率，所以來找我們公司辦理信貸。不過一開始，由於聯徵紀錄查詢過多，銀行一時無法批准他的申請。</p>
+            <p>後來，我們與廖先生溝通，建議他先培養信用，並承諾在三到六個月內恢復良好的信用狀況。</p>
+            <p>經過這段時間後，廖先生的信用恢復正常，我們再幫他辦理信貸，結果順利通過了。最終核貸75萬元，利率從原本的8%降至4.5%，每月節省利息支出約$2,600。</p>
+          </div>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 案例14 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">李先生｜房仲新人購車</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">半工半讀剛畢業的李先生，目前是一名房仲業者，需要一台代步用汽車，但他年資僅有7個月，名下一筆信貸10萬只繳款一期、信用卡持卡四個月...</p>
+          <div class="full-content hidden space-y-3">
+            <p>半工半讀剛畢業的李先生，目前是一名房仲業者，需要一台代步用汽車，但他年資僅有7個月，名下一筆信貸10萬只繳款一期、信用卡持卡四個月。這代表著他的工作條件較差、信用紀錄較少。</p>
+            <p>李先生當時為了想買汽車，而多次申請信貸造成聯徵多查。在與李先生深入溝通後，提供薪資轉帳證明、工作名片等來證明李先生具有還款能力，且對於汽車有極度高使用需求。</p>
+            <p>最後我們成功幫助李先生買下一台汽車—Toyota Wish，終於不需要在颳風下雨的天氣騎著摩托車去找客戶，也可以在休假日載著父母親到外縣市走走。核貸金額65萬元，分5年償還。</p>
+          </div>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 案例15 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">王先生｜130萬投資貸款</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">王先生因資金需求，希望投資虛擬貨幣，因此我們協助他以不動產貸款，成功核准130萬元。對保完成後，我們準備將資料交給代書辦理設定時...</p>
+          <div class="full-content hidden space-y-3">
+            <p>王先生因資金需求，希望投資虛擬貨幣，因此我們協助他以不動產貸款，成功核准130萬元。對保完成後，我們準備將資料交給代書辦理設定時，接到王先生的電話，表示父親希望到公司了解貸款情況。</p>
+            <p>我們才從父親口中得知，王先生過去曾因手機賭博欠下巨額債務，父親已為他償還高達700萬元，但他仍未改變沉迷習慣，讓父親十分無奈。</p>
+            <p>了解事情始末後，我們也與客戶深談，希望他能從這次經驗中學到教訓，不再重蹈覆轍，走向更穩定的未來。最終協助他將資金用於正當投資而非賭博。</p>
+          </div>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 案例16 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <h3 class="font-bold text-xl mb-4 text-[#2C5F64]">周先生｜400萬醫療貸款</h3>
+        <div class="text-gray-600 mb-4">
+          <p class="preview">周先生，是一位年過40靠著每月股東分紅過活的中年男子，他有房、有車，是人人都有的目標。不過，他的身體每況愈下，需要大筆醫療費來支撐自己...</p>
+          <div class="full-content hidden space-y-3">
+            <p>周先生，是一位年過40靠著每月股東分紅過活的中年男子，他有房、有車，是人人都有的目標。不過，他的身體每況愈下，需要大筆醫療費來支撐自己。</p>
+            <p>周先生的不動產已貸款到三胎（銀行、融資、民間代書），且已有被私人設定，汽車貸款辦理增貸已貸到滿額，信用卡在半年內有逾期一個月的遲繳紀錄。他不但需要支付自身醫療費，還要背著龐大的債務，早已喘不過氣。</p>
+            <p>經過我們與周先生三個月的溝通，與不斷地找尋方式，終於成功以不動產貸款核准400萬解決了高額利息的債務、將信用卡卡費繳清，並讓他可以安心得到治療。</p>
+          </div>
+        </div>
+        <button class="text-[#2C5F64] font-semibold flex items-center more-btn hover:text-[#1e4a4d] transition-colors">
+          <span>More</span>
+          <svg class="w-5 h-5 ml-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
-
-  <div class="text-center mt-10">
-      <button @click="showAll = !showAll" class="bg-[#2C5F64] hover:bg-[#1E4A4E] text-white py-2 px-4 rounded-lg">
-          <span x-text="showAll ? '收起案例' : '展開更多案例'"></span>
-      </button>
-  </div>
-
-  <script>
-      const casesData = [
-          { title: '陳小姐｜房貸增貸1680萬', description: '陳小姐因家庭資金調度需求，規劃辦理貸款。過去數年間，婆婆曾存放800萬元於陳小姐帳戶，近期因個人需求需動用該筆資金...' },
-          { title: '劉小姐｜債務整合成功', description: '劉小姐在鼎泰豐工作，有薪轉勞保，月收入大約在4萬多，但因為信用卡刷爆，每個月還有其他貸款要繳款所以幾乎入不敷出...' },
-          { title: '黃小姐｜困難條件成功購車', description: '黃小姐想買車，但因為她的條件問題，很多家車行都無法幫忙。後來，她找到了我們公司，我們評估後發現可以幫她辦理...' },
-          { title: '羅先生｜信貸核准93萬', description: '羅先生近期因投資虛擬貨幣，不慎遭遇詐騙，導致損失數十萬元，進而影響到日常生活品質。由於擔心家人得知此事...' },
-          { title: '黃先生｜21歲實現餐車夢', description: '21歲的黃先生一直想開一間餐車，實現自己的創業夢。但因為家裡的關係，他沒有親人可以幫助他，只能靠自己...' },
-          { title: '許小姐｜醫療信貸30萬', description: '許小姐因為家人生病需要一筆資金治療，但是她的條件並不理想本身是信用小白，過去曾有融資本票裁定的紀錄...' },
-          { title: '游小姐｜土地抵押創新解套', description: '游小姐她因為沒有薪轉和勞保，所以銀行不願意讓他申請貸款。她已經向很多家銀行和民間借貸機構資訊，但都沒有辦法解決問題...' },
-          { title: '黃小姐｜成功購入Lexus', description: '黃小姐一直希望能擁有一台合適的代步車，提升日常出行的便利性。然而，過去在其他金融機構申請車貸時，因財力條件不足...' },
-          { title: '高先生｜23歲核貸50萬', description: '23歲大學剛畢業的高先生，現職工作年資4個月，月收入2.9萬，從未辦理過銀行的貸款，這意味著沒有過去的貸款紀錄可供參考...' },
-          { title: '曾先生｜28萬急救愛犬', description: '曾先生的狗狗生病了，需要一筆醫療費用，但是他已經沒有多餘的錢可以支付。因為他的信用卡早就刷爆了，還有好幾筆信貸要還...' },
-          { title: '林小姐｜當鋪代償增貸', description: '林小姐的愛車因資金需求，曾在當鋪辦理借款，但由於當鋪利息較高，使得財務負擔逐漸加重。為了降低利息支出...' },
-          { title: '陳先生｜108萬債務整合', description: '陳先生近期因財務壓力增加，信用卡負擔過高，再加上短期內頻繁申請貸款導致銀行查詢紀錄過多，影響貸款審核...' },
-          { title: '廖先生｜信用修復成功', description: '廖先生因為想要降低貸款利率，所以來找我們公司辦理信貸。不過一開始，由於聯徵紀錄查詢過多，銀行一時無法批准他的申請...' },
-          { title: '李先生｜房仲新人購車', description: '半工半讀剛畢業的李先生，目前是一名房仲業者，需要一台代步用汽車，但他年資僅有7個月，名下一筆信貸10萬只繳款一期...' },
-          { title: '王先生｜130萬投資貸款', description: '王先生因資金需求，希望投資虛擬貨幣，因此我們協助他以不動產貸款，成功核准130萬元。對保完成後，我們準備將資料交給代書...' },
-          { title: '周先生｜400萬醫療貸款', description: '周先生，是一位年過40靠著每月股東分紅過活的中年男子，他有房、有車，是人人都有的目標。不過，他的身體每況愈下...' }
-      ];
-  </script>
-
 </section>
+
+<style>
+  .preview {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.6;
+    text-align: left;
+  }
+  .full-content {
+    display: none;
+    line-height: 1.6;
+    text-align: left;
+  }
+  .full-content.show {
+    display: block;
+  }
+  .more-btn.active svg {
+    transform: rotate(180deg);
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const moreButtons = document.querySelectorAll('.more-btn');
+  
+  moreButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const card = this.closest('div.bg-white');
+      const preview = card.querySelector('.preview');
+      const fullContent = card.querySelector('.full-content');
+      
+      if (fullContent.classList.contains('hidden') || !fullContent.classList.contains('show')) {
+        preview.style.display = 'none';
+        fullContent.classList.remove('hidden');
+        fullContent.classList.add('show');
+        this.classList.add('active');
+        this.querySelector('span').textContent = 'Less';
+      } else {
+        preview.style.display = '-webkit-box';
+        fullContent.classList.remove('show');
+        fullContent.classList.add('hidden');
+        this.classList.remove('active');
+        this.querySelector('span').textContent = 'More';
+      }
+    });
+  });
+});
+</script>
 
 
   
