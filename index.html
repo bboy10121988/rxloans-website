@@ -518,13 +518,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- 成功案例彈窗 -->
 <div 
-  x-data="popupComponent()" 
+  x-data="{...popupComponent()}" 
   x-init="init" 
   x-show="showPopup" 
   x-cloak 
   x-transition 
   class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
 >
+
   <div class="bg-white p-6 rounded-xl shadow-lg w-11/12 max-w-md relative">
     <!-- 關閉按鈕 -->
     <button 
