@@ -509,6 +509,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 
 
+<!-- 彈窗區塊 -->
+<div 
+  x-data="{ showPopup: false }"
+  x-init="setTimeout(() => showPopup = true, 3000)"
+  x-show="showPopup"
+  x-transition
+  class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+>
+  <div class="bg-white p-6 rounded-xl shadow-lg w-11/12 max-w-md relative">
+    
+    <!-- 關閉按鈕 -->
+    <button @click="showPopup = false" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-xl">×</button>
+
+    <!-- 標題 -->
+    <h3 class="text-xl font-bold text-gray-800 mb-2">看看真實成功案例</h3>
+    
+    <!-- 內文 -->
+    <p class="text-gray-600 mb-4">
+      信用有瑕疵也能申辦？看我們如何幫助客戶順利過件，真實案例完整公開。
+    </p>
+
+    <!-- CTA 按鈕 -->
+    <a href="https://rxloans.tw/#cases" class="block text-center bg-[#2C5F64] text-white py-3 rounded-lg hover:opacity-90">
+      前往案例頁面
+    </a>
+  </div>
+</div>
 
 
 </body>
