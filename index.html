@@ -95,7 +95,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </nav>
 
     <!-- 桌面版「立即來電」按鈕 -->
-    <a href="tel:0976172027" class="hidden md:inline bg-[#2C5F64] text-white px-4 py-2 rounded-lg">立即來電</a>
+    <a id="btn-call-desktop" href="tel:0976172027" class="hidden md:inline bg-[#2C5F64] text-white px-4 py-2 rounded-lg">立即來電</a>
 
     <!-- 手機版「導覽選單」按鈕 -->
     <button class="block md:hidden p-2 rounded-lg bg-[#2C5F64] text-white" @click="menuOpen = !menuOpen">
@@ -457,7 +457,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- 手機版底部固定按鈕 -->
 <div class="fixed bottom-0 left-0 w-full bg-white shadow-md p-4 flex justify-around items-center md:hidden">
   <!-- 立即來電 -->
-  <a href="tel:0976172027" class="flex-1 text-center bg-[#2C5F64] text-white py-3 rounded-lg mx-2">
+  <a id="btn-call-mobile" href="tel:0976172027" class="flex-1 text-center bg-[#2C5F64] text-white py-3 rounded-lg mx-2">
     立即來電
   </a>
   <!-- 立即諮詢 (LINE) -->
@@ -498,7 +498,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
       <h3 class="text-base font-semibold mb-4 border-b border-white/20 pb-2">聯絡方式</h3>
       <ul class="space-y-1 leading-relaxed">
-        <li>電話：<a href="tel:0976172027" class="underline hover:opacity-80">0976-172-027</a></li>
+        <li>電話：<a id="btn-call-footer" href="tel:0976172027" class="underline hover:opacity-80">0976-172-027</a></li>
         <li>LINE 諮詢：<a href="https://lin.ee/zPhiUUg" target="_blank" class="underline hover:opacity-80">立即加入</a></li>
       </ul>
     </div>
