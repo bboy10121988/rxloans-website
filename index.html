@@ -559,16 +559,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // 僅首頁顯示彈窗（可視需求移除）
         if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
 
-        const lastShown = localStorage.getItem('popup_shown');
-        const now = new Date();
-        const cooldown = 1000 * 60 * 60 * 24; // 24 小時
-
-        if (!lastShown || now - new Date(lastShown) > cooldown) {
-          setTimeout(() => {
-            this.showPopup = true;
-            localStorage.setItem('popup_shown', now.toISOString());
-          }, 3000); // 彈窗延遲顯示時間
-        }
+        setTimeout(() => {
+          this.showPopup = true;
+        }, 3000); // 彈窗延遲顯示時間（毫秒）
       },
       goToCases() {
         // GA、FB 追蹤事件
@@ -586,7 +579,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         setTimeout(() => {
           const target = document.querySelector('#cases');
           if (target) {
-            target.scrollIntoView({ behavior: 'smooth' }); // 平滑滾動跳轉
+            target.scrollIntoView({ behavior: 'smooth' });
           }
         }, 300);
       }
