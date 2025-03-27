@@ -847,10 +847,14 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="mt-6 flex justify-start space-x-4">
       <!-- 改為 JS 滾動，不更改網址 -->
       <button 
-        id="popup_case_button"
-        @click="popupOpen = false; document.getElementById('cases').scrollIntoView({ behavior: 'smooth' })"
-        class="bg-[#2C5F64] text-white px-4 py-2 rounded-lg"
-      >
+          id="popup_case_button"
+          data-gtm="popup_case_button"
+          @click="popupOpen = false; document.getElementById('cases').scrollIntoView({ behavior: 'smooth' })"
+          class="bg-[#2C5F64] text-white px-4 py-2 rounded-lg"
+          >
+          查看成功案例
+      </button>
+
         查看成功案例
       </button>
 
