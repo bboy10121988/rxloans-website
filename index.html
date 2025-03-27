@@ -44,7 +44,7 @@
 <body class="font-sans bg-gray-50">
   <!-- Google Tag Manager (noscript) 放置於 <body> 第一行 -->
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZRVPJPR"
+    <iframe src="https://www.googletagmanager.com/ns.html?id=G-KH2MKN5MZ1"
     height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
   <!-- End Google Tag Manager -->
@@ -62,8 +62,9 @@
       <a href="#" class="hover:text-[#2C5F64]">首頁</a>
       <a href="#services" class="hover:text-[#2C5F64]">服務項目</a>
       <a href="#cases" class="hover:text-[#2C5F64]">成功案例</a>
-      <a href="#notice" class="hover:text-[#2C5F64]">申貸須知</a>
+      
       <a href="#faq" class="hover:text-[#2C5F64]">常見問題</a>  <!-- 新增 FAQ -->
+      <a href="#notice" class="hover:text-[#2C5F64]">申貸須知</a>
       <a href="#contact" class="hover:text-[#2C5F64]">聯絡我們</a>
     </nav>
 
@@ -106,8 +107,8 @@
         <a href="#" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">首頁</a>
         <a href="#services" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">服務項目</a>
         <a href="#cases" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">成功案例</a>
-        <a href="#notice" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">申貸須知</a>
         <a href="#faq" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">常見問題</a> <!-- 新增 FAQ -->
+        <a href="#notice" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">申貸須知</a>
         <a href="#contact" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">聯絡我們</a>
       </nav>
     </div>
@@ -128,7 +129,7 @@
     <div class="relative z-10">
       <h1 class="text-4xl font-bold">專業理財顧問</h1>
       <p class="mt-4">一時的周轉　永遠的服務</p>
-      <a href="https://lin.ee/zPhiUUg" class="mt-6 inline-block bg-[#2C5F64] text-white px-6 py-3 rounded-lg">立即諮詢</a>
+      <a href="https://lin.ee/zPhiUUg" id="btn-consult-hero" class="mt-6 inline-block bg-[#2C5F64] text-white px-6 py-3 rounded-lg">立即諮詢</a>
     </div>
   </section>
   
@@ -226,8 +227,8 @@
 </section>
 
   
-  <!-- Lucide Icons JS -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  
   <script>
     lucide.createIcons();
   </script>
@@ -758,11 +759,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- 手機版底部固定按鈕 -->
 <div class="fixed bottom-0 left-0 w-full bg-white shadow-md p-4 flex justify-around items-center md:hidden">
   <!-- 立即來電 -->
-  <a href="tel:0976172027" class="flex-1 text-center bg-[#2C5F64] text-white py-3 rounded-lg mx-2">
+  <a href="tel:0976172027" id="btn-call-mobile" class="flex-1 text-center bg-[#2C5F64] text-white py-3 rounded-lg mx-2">
     立即來電
   </a>
   <!-- 立即諮詢 (LINE) -->
-  <a href="https://lin.ee/zPhiUUg" target="_blank" class="flex-1 text-center bg-green-500 text-white py-3 rounded-lg mx-2">
+  <a href="https://lin.ee/zPhiUUg" id="btn-consult-mobile" target="_blank" class="flex-1 text-center bg-green-500 text-white py-3 rounded-lg mx-2">
     立即諮詢
   </a>
 </div>
@@ -799,7 +800,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div>
       <h3 class="text-base font-semibold mb-4 border-b border-white/20 pb-2">聯絡方式</h3>
       <ul class="space-y-1 leading-relaxed">
-        <li>電話：<a href="tel:0976172027" class="underline hover:opacity-80">0976-172-027</a></li>
+        <li>電話：<a href="tel:0976172027" id="btn-call-footer" class="underline hover:opacity-80">0976-172-027</a></li>
         <li>LINE 諮詢：<a href="https://lin.ee/zPhiUUg" target="_blank" class="underline hover:opacity-80">立即加入</a></li>
       </ul>
     </div>
@@ -846,6 +847,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="mt-6 flex justify-start space-x-4">
       <!-- 改為 JS 滾動，不更改網址 -->
       <button 
+        id="popup_case_button"
         @click="popupOpen = false; document.getElementById('cases').scrollIntoView({ behavior: 'smooth' })"
         class="bg-[#2C5F64] text-white px-4 py-2 rounded-lg"
       >
