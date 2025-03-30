@@ -130,7 +130,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p class="mt-4">穩健資金規劃　安心長遠服務</p>
   <p class="mt-4">專營服務項目｜</p>
   <p class="mt-4">房屋與土地貸款、信用貸款與債務整合</p>
-  <a href="https://lin.ee/zPhiUUg" id="btn-consult-hero" class="mt-6 inline-block bg-[#2C5F64] text-white px-6 py-3 rounded-lg">立即諮詢</a>
+  <a href="https://lin.ee/zPhiUUg" id="btn-consult-hero" class="mt-6 inline-block bg-[#2C5F64] text-white px-6 py-3 rounded-lg hidden">
+    立即諮詢
+  </a>
+  <a href="#contact" id="btn-consult-hero-form" class="mt-6 inline-block bg-[#2C5F64] text-white px-6 py-3 rounded-lg">
+    免費評估｜填寫表單
+  </a>
+  
+  
 </div>
   </section>
   
@@ -715,22 +722,63 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 
-  <!-- 聯絡表單 -->
+<!-- 聯絡表單 -->
 <section id="contact" class="py-16 bg-white">
-  <div class="max-w-3xl mx-auto">
+  <div class="max-w-3xl mx-auto px-4">
+
     <h2 class="text-3xl font-bold text-center mb-8">聯絡我們</h2>
     
     <form id="contactForm" class="space-y-4">
-      <input type="text" id="name" name="name" placeholder="姓名" required class="w-full p-3 rounded-lg">
-      <input type="tel" id="phone" name="phone" placeholder="電話" required class="w-full p-3 rounded-lg">
-      <input type="text" id="line" name="line" placeholder="Line ID" required class="w-full p-3 rounded-lg">
-      <textarea id="message" name="message" placeholder="留言內容" rows="4" required class="w-full p-3 rounded-lg"></textarea>
+
+      <!-- 姓名 -->
+      <div>
+        <label for="name" class="block text-left mb-1 text-gray-700 font-medium">姓名</label>
+        <input type="text" id="name" name="name" required class="w-full p-3 rounded-lg border border-gray-300">
+      </div>
+
+      <!-- 電話 -->
+      <div>
+        <label for="phone" class="block text-left mb-1 text-gray-700 font-medium">電話</label>
+        <input type="tel" id="phone" name="phone" required class="w-full p-3 rounded-lg border border-gray-300">
+      </div>
+
+      <!-- Line ID -->
+      <div>
+        <label for="line" class="block text-left mb-1 text-gray-700 font-medium">Line ID</label>
+        <input type="text" id="line" name="line" required class="w-full p-3 rounded-lg border border-gray-300">
+      </div>
+
+      <!-- 服務項目下拉選單 -->
+      <div>
+        <label for="service" class="block text-left mb-1 text-gray-700 font-medium">感興趣的服務項目（選填）</label>
+        <select id="service" name="service" class="w-full p-3 rounded-lg border border-gray-300">
+          <option value="">請選擇服務項目</option>
+          <option value="房屋貸款">房屋貸款</option>
+          <option value="個人信用貸款">個人信用貸款</option>
+          <option value="汽車貸款">汽車貸款</option>
+          <option value="數位貸款">數位貸款</option>
+          <option value="企業貸款">企業貸款</option>
+          <option value="協商/更生">協商/更生</option>
+          <option value="中古車買賣">中古車買賣</option>
+        </select>
+      </div>
+
+      <!-- 留言內容 -->
+      <div>
+        <label for="message" class="block text-left mb-1 text-gray-700 font-medium">留言內容</label>
+        <textarea id="message" name="message" rows="4" required class="w-full p-3 rounded-lg border border-gray-300"></textarea>
+      </div>
+
+      <!-- 送出按鈕 -->
       <button type="submit" class="w-full bg-[#2C5F64] text-white py-3 rounded-lg">送出</button>
     </form>
 
     <p id="successMessage" class="hidden text-center text-green-600 mt-4">✅ 提交成功！我們會盡快與您聯絡。</p>
   </div>
 </section>
+
+
+
 
 <script>
   document.getElementById("contactForm").addEventListener("submit", function(event) {
@@ -763,10 +811,16 @@ document.addEventListener('DOMContentLoaded', function() {
   <a href="tel:0976172027" id="btn-call-mobile" class="flex-1 text-center bg-[#2C5F64] text-white py-3 rounded-lg mx-2">
     立即來電
   </a>
-  <!-- 立即諮詢 (LINE) -->
-  <a href="https://lin.ee/zPhiUUg" id="btn-consult-mobile" target="_blank" class="flex-1 text-center bg-green-500 text-white py-3 rounded-lg mx-2">
-    立即諮詢
-  </a>
+  <!-- 原按鈕隱藏 -->
+<a href="https://lin.ee/zPhiUUg" id="btn-consult-mobile" target="_blank" class="hidden flex-1 text-center bg-green-500 text-white py-3 rounded-lg mx-2">
+  立即諮詢
+</a>
+
+<!-- 新填表按鈕 -->
+<a href="#contact" class="flex-1 text-center bg-[#06C755] text-white py-3 rounded-lg mx-2">
+  填寫表單
+</a>
+
 </div>
 <!-- 網站頁尾 Footer -->
 <footer class="bg-[#2C5F64] text-white text-sm pt-12 pb-8">
@@ -810,7 +864,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <!-- 底部版權區塊 -->
   <div class="border-t border-white/20 mt-10 pt-4 text-center text-xs text-white/70">
-    © <span id="year"></span> 榮鑫理財金融顧問 | 技術支援：Siteamp
+    © <span id="year"></span> 榮鑫理財金融顧問 | 技術支援：TextSence
   </div>
 </footer>
 
@@ -822,7 +876,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div 
   x-data="{ popupOpen: false }" 
   x-init="setTimeout(() => popupOpen = true, 1000)" 
-  class="fixed inset-0 flex items-center justify-center z-[999]"
+  class="hidden fixed inset-0 flex items-center justify-center z-[999]"
   x-show="popupOpen"
   style="display: none;"
   x-transition.opacity
@@ -871,16 +925,92 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 
-<!-- 桌面版懸浮 LINE 按鈕（內嵌 SVG 版） -->
-<a id="btn-consult-line-desktop" href="https://lin.ee/zPhiUUg" target="_blank"
-   class="hidden md:flex justify-center items-center fixed bottom-6 right-6 bg-[#06C755] text-white px-4 py-2 rounded-full shadow-lg z-[999] hover:bg-[#04a94e] transition">
+<div 
+  x-data="{
+    popupOpen: false,
+    hasInteracted: false,
+    showPopup() {
+      if (!this.hasInteracted) this.popupOpen = true;
+    },
+    closePopup() {
+      this.popupOpen = false;
+      setTimeout(() => this.showPopup(), 40000);
+    }
+  }"
+  x-init="setTimeout(() => showPopup(), 1000)"
+  class="fixed inset-0 flex items-center justify-center z-[999]"
+  x-show="popupOpen"
+  style="display: none;"
+  x-transition.opacity
+>
+  <!-- 背景遮罩 -->
+  <div class="absolute inset-0 bg-black bg-opacity-50" @click="closePopup()"></div>
+
+  <!-- 彈窗主體 -->
+  <div class="relative bg-white p-6 rounded-lg shadow-xl w-11/12 md:w-1/2 text-left">
+
+    <!-- 關閉按鈕 -->
+    <button 
+      @click="closePopup()" 
+      class="absolute top-2 right-2 text-gray-400 hover:text-gray-700 transition"
+    >✖</button>
+
+    <!-- 內容 -->
+    <h2 class="text-3xl font-bold mb-4 text-[#2C5F64]">免費諮詢表單</h2>
+    <p class="text-gray-700 text-lg mb-4 leading-relaxed">
+      想了解貸款條件與方案？<br class="md:hidden">
+      留下資料將有專人與您聯繫，提供免費專業評估。
+    </p>
+
+    <!-- CTA 按鈕區 -->
+    <div class="mt-6 flex flex-col md:flex-row justify-start items-stretch md:items-center space-y-3 md:space-y-0 md:space-x-4">
+
+      <!-- 填寫表單（不再顯示第二次） -->
+      <button 
+        @click="popupOpen = false; hasInteracted = true; document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
+        class="bg-[#2C5F64] hover:bg-[#24494e] text-white text-lg px-6 py-3 rounded-lg font-semibold w-full md:w-auto"
+      >
+        填寫表單，取得免費評估
+      </button>
+
+      <!-- 查看成功案例（不再顯示第二次） -->
+      <button 
+        @click="popupOpen = false; hasInteracted = true; document.getElementById('cases').scrollIntoView({ behavior: 'smooth' })" 
+        class="bg-[#06C755] hover:bg-[#04a94e] text-white text-lg px-6 py-3 rounded-lg font-semibold w-full md:w-auto"
+      >
+        查看成功案例
+      </button>
+
+      <!-- 稍後再說（40 秒後再彈一次） -->
+      <button 
+        @click="closePopup()" 
+        class="bg-[#E2E8F0] hover:bg-gray-300 text-gray-700 text-lg px-6 py-3 rounded-lg font-semibold w-full md:w-auto"
+      >
+        稍後再說
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 桌面版懸浮按鈕（滑動至表單 + 字體放大至 text-xl） -->
+<a id="btn-consult-line-desktop" href="#contact"
+   class="hidden md:flex justify-center items-center fixed bottom-6 right-6 bg-[#06C755] text-white px-7 py-4 rounded-full shadow-lg z-[999] hover:bg-[#04a94e] transition text-xl font-bold"
+   onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });"
+   data-gtm="cta_scroll_to_form">
+  
   <!-- SVG Icon -->
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.5 8.5 0 018 8v.5z"/>
   </svg>
-  <span class="text-center leading-none">加LINE諮詢</span>
+
+  <span class="text-center leading-none">填寫表單</span>
 </a>
+
+
+
 
 
 
