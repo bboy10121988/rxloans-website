@@ -55,35 +55,54 @@
   
   
   
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contactForm");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const payload = {
-        name: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
-        line: document.getElementById("line").value,
-        service: document.getElementById("service").value,
-        message: document.getElementById("message").value
-      };
-
-      fetch("https://script.google.com/macros/s/AKfycbzzAy28qFmN6NGbPAkOjmfwxeIQJ1CNByErAFeUZbRi_95jiSnp4GSnVQATxybEwLB7CA/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        mode: "no-cors", // 💡 核心關鍵
-        body: JSON.stringify(payload)
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("contactForm");
+      if (!form) {
+        console.error("⚠️ 找不到 contactForm，請確認 HTML 載入順序");
+        return;
+      }
+  
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+  
+        const formData = {
+          name: document.getElementById("name").value,
+          phone: document.getElementById("phone").value,
+          line: document.getElementById("line").value,
+          service: document.getElementById("service").value,
+          message: document.getElementById("message").value
+        };
+  
+        // ✅ 加上 mode: "no-cors" 解決 CORS 問題
+        fetch("https://script.google.com/macros/s/AKfycbzzAy28qFmN6NGbPAkOjmfwxeIQJ1CNByErAFeUZbRi_95jiSnp4GSnVQATxybEwLB7CA/exec", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          mode: "no-cors",
+          body: JSON.stringify(formData)
+        })
+        .then(() => {
+          console.log("✅ 表單送出成功（no-cors 模式）");
+          form.reset();
+          document.getElementById("successMessage").classList.remove("hidden");
+  
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "formSubmit",
+            formName: "聯絡表單"
+          });
+        })
+        .catch(error => {
+          console.error("❌ 表單送出失敗：", error);
+          alert("表單送出失敗，請稍後再試或聯絡客服！");
+        });
       });
-
-      form.reset();
-      document.getElementById("successMessage").classList.remove("hidden");
     });
-  });
-</script>
-
-
+  </script>
+  
+  
   
   
   
@@ -94,12 +113,13 @@
       立即來電
     </a>
     <!-- 原按鈕隱藏 -->
-  <a href="https://lin.ee/zPhiUUg" id="btn-consult-mobile" target="_blank" class="hidden flex-1 text-center bg-green-500 text-white py-3 rounded-lg mx-2">
-    立即諮詢
-  </a>
+    <a href="https://lin.ee/zPhiUUg" id="btn-consult-mobile" target="_blank" class="flex-1 text-center bg-green-500 text-white py-3 rounded-lg mx-2">
+        立即諮詢
+      </a>
+      
   
   <!-- 新填表按鈕 -->
-  <a href="#contact" class="flex-1 text-center bg-[#06C755] text-white py-3 rounded-lg mx-2">
+  <a href="#contact" class="hidden flex-1 text-center bg-[#06C755] text-white py-3 rounded-lg mx-2">
     填寫表單
   </a>
   
