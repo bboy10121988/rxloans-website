@@ -56,44 +56,51 @@
   
   
   <script>
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // 阻止表單預設提交行為
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("contactForm");
+      if (!form) {
+        console.error("⚠️ 找不到 contactForm，請確認 HTML 載入順序");
+        return;
+      }
   
-      const formData = {
-        name: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
-        line: document.getElementById("line").value,
-        service: document.getElementById("service").value,
-        message: document.getElementById("message").value
-      };
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
   
-      fetch("https://script.google.com/macros/s/AKfycbzPTB1J5-ttQR21a-7JH5WzPB0Q25lukm0kZXEhF7Y6o-WYNvRDtBRuEIUhUKvR_M8LZg/exec", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      })
-      .then(response => response.text())
-      .then(data => {
-        console.log("✅ 表單送出成功：", data);
+        const formData = {
+          name: document.getElementById("name").value,
+          phone: document.getElementById("phone").value,
+          line: document.getElementById("line").value,
+          service: document.getElementById("service").value,
+          message: document.getElementById("message").value
+        };
   
-        document.getElementById("contactForm").reset(); // 清空表單
-        document.getElementById("successMessage").classList.remove("hidden"); // 顯示成功訊息
+        fetch("https://script.google.com/macros/s/AKfycbzPTB1J5-ttQR21a-7JH5WzPB0Q25lukm0kZXEhF7Y6o-WYNvRDtBRuEIUhUKvR_M8LZg/exec", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData)
+        })
+          .then(response => response.text())
+          .then(data => {
+            console.log("✅ 表單送出成功：", data);
+            form.reset();
+            document.getElementById("successMessage").classList.remove("hidden");
   
-        // ✅ 推送到 GTM 的 dataLayer 事件
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: 'formSubmit',
-          formName: '聯絡表單'
-        });
-      })
-      .catch(error => {
-        console.error("❌ 表單送出失敗：", error);
-        alert("表單送出失敗，請稍後再試或聯絡客服！");
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+              event: "formSubmit",
+              formName: "聯絡表單"
+            });
+          })
+          .catch(error => {
+            console.error("❌ 表單送出失敗：", error);
+            alert("表單送出失敗，請稍後再試或聯絡客服！");
+          });
       });
     });
   </script>
+  
   
   
   <!-- 手機版底部固定按鈕 -->
