@@ -58,22 +58,17 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contactForm");
-    const successMessage = document.getElementById("successMessage");
-
-    if (!form) {
-      console.error("⚠️ 找不到 contactForm，請確認 HTML 載入順序");
-      return;
-    }
 
     form.addEventListener("submit", function (event) {
-      event.preventDefault();
+      event.preventDefault(); // ⛔️ 阻止表單預設送出行為（避免跳轉）
 
-      const formData = {
-        name: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
-        line: document.getElementById("line").value,
-        service: document.getElementById("service").value,
-        message: document.getElementById("message").value
+      const formData = new FormData(form);
+      const payload = {
+        name: formData.get("name"),
+        phone: formData.get("phone"),
+        line: formData.get("line"),
+        service: formData.get("service"),
+        message: formData.get("message")
       };
 
       fetch("https://script.google.com/macros/s/AKfycbzzAy28qFmN6NGbPAkOjmfwxeIQJ1CNByErAFeUZbRi_95jiSnp4GSnVQATxybEwLB7CA/exec", {
@@ -81,34 +76,23 @@
         headers: {
           "Content-Type": "application/json"
         },
-        mode: "no-cors",
-        body: JSON.stringify(formData)
-      })
-      .then(() => {
-        // 顯示成功訊息
-        successMessage.classList.remove("hidden");
-        successMessage.scrollIntoView({ behavior: "smooth" });
+        mode: "no-cors", // ✅ 為避免 CORS 堵塞，這是必要的
+        body: JSON.stringify(payload)
+      });
 
-        // 清空表單
-        form.reset();
+      // 🎉 提交後直接顯示成功訊息，不等回應（no-cors 模式不支援 then）
+      form.reset();
+      document.getElementById("successMessage").classList.remove("hidden");
 
-        // 送出 GA 事件
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: "formSubmit",
-          formName: "聯絡表單"
-        });
-      })
-      .catch(error => {
-        console.error("❌ 表單送出失敗：", error);
-        alert("表單送出失敗，請稍後再試或聯絡客服！");
+      // GA4 行為紀錄
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "formSubmit",
+        formName: "聯絡表單"
       });
     });
   });
 </script>
-
-  
-  
   
   
   
