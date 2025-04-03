@@ -1,0 +1,114 @@
+<head>
+    <style>
+    [x-cloak] { display: none !important; }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5VNPQDL8');</script>
+<!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="榮鑫理財金融顧問提供房屋貸款、信用貸款、企業貸款、汽車貸款，幫助客戶解決資金問題，合法經營，無手續費。">
+  <meta name="keywords" content="貸款,房貸,信貸,企業貸款,車貸,信用瑕疵貸款,融資,榮鑫理財">
+  <meta name="author" content="榮鑫理財金融顧問">
+  <meta property="og:title" content="榮鑫理財金融顧問 - 專業貸款諮詢">
+  <meta property="og:description" content="專業貸款顧問，解決資金問題，免費評估！">
+  <meta property="og:image" content="https://rxloans.tw/src/images/finance.jpg">
+  <meta property="og:url" content="https://rxloans.tw">
+  <meta name="robots" content="index, follow">
+
+  <title>榮鑫理財金融顧問</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Alpine.js -->
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+</head>
+
+
+
+<body class="font-sans bg-gray-50">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VNPQDL8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <!-- Navbar -->
+<header class="bg-white shadow fixed w-full z-50" x-data="{ menuOpen: false }">
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <!-- Logo + 公司名稱 -->
+    <div class="flex items-center space-x-3">
+      <img src="src/images/rx.jpg" alt="榮鑫理財 Logo" class="h-10">
+      <span class="text-lg font-bold text-gray-800">榮鑫理財金融顧問</span>
+    </div>
+
+    <!-- 桌面版導航 -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="#" class="hover:text-[#2C5F64]">首頁</a>
+      <a href="#services" class="hover:text-[#2C5F64]">服務項目</a>
+      <a href="#cases" class="hover:text-[#2C5F64]">成功案例</a>
+      
+      <a href="#faq" class="hover:text-[#2C5F64]">常見問題</a>  <!-- 新增 FAQ -->
+      <a href="#notice" class="hover:text-[#2C5F64]">申貸須知</a>
+      <a href="#contact" class="hover:text-[#2C5F64]">聯絡我們</a>
+    </nav>
+
+    <!-- 桌面版「立即來電」按鈕 -->
+    <a href="tel:0976172027" id="btn-call-desktop" class="hidden md:inline bg-[#2C5F64] text-white px-4 py-2 rounded-lg">
+      立即來電
+    </a>
+
+
+    <!-- 手機版「導覽選單」按鈕 -->
+    <button class="block md:hidden p-2 rounded-lg bg-[#2C5F64] text-white" @click="menuOpen = !menuOpen">
+      ☰
+    </button>
+  </div>
+
+  <!-- 手機版側邊選單 -->
+  <div 
+    x-cloak
+    class="fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity"
+    x-show="menuOpen"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    @click.away="menuOpen = false">
+    
+    <div class="fixed right-0 top-0 w-64 h-full bg-white shadow-md p-6 transform transition-transform"
+         x-show="menuOpen"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="translate-x-full"
+         x-transition:enter-end="translate-x-0"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="translate-x-0"
+         x-transition:leave-end="translate-x-full">
+      
+      <!-- 關閉按鈕 -->
+      <button class="absolute top-4 right-4 text-gray-600" @click="menuOpen = false">✖</button>
+
+      <!-- 選單連結 (點擊後自動關閉選單) -->
+      <nav class="flex flex-col space-y-4 mt-8">
+        <a href="#" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">首頁</a>
+        <a href="#services" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">服務項目</a>
+        <a href="#cases" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">成功案例</a>
+        <a href="#faq" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">常見問題</a> <!-- 新增 FAQ -->
+        <a href="#notice" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">申貸須知</a>
+        <a href="#contact" class="text-lg hover:text-[#2C5F64]" @click="menuOpen = false">聯絡我們</a>
+      </nav>
+    </div>
+
+  </div>
+</header>
