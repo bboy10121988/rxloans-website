@@ -58,33 +58,40 @@
   <script>
     document.getElementById("contactForm").addEventListener("submit", function(event) {
       event.preventDefault(); // 阻止表單預設提交行為
-      
-      let formData = {
+  
+      const formData = {
         name: document.getElementById("name").value,
         phone: document.getElementById("phone").value,
         line: document.getElementById("line").value,
-        service: document.getElementById("service").value, // 建議一併送出
+        service: document.getElementById("service").value,
         message: document.getElementById("message").value
       };
   
       fetch("https://script.google.com/macros/s/AKfycbzPTB1J5-ttQR21a-7JH5WzPB0Q25lukm0kZXEhF7Y6o-WYNvRDtBRuEIUhUKvR_M8LZg/exec", {
         method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify(formData)
       })
-      .then(() => {
+      .then(response => response.text())
+      .then(data => {
+        console.log("✅ 表單送出成功：", data);
+  
         document.getElementById("contactForm").reset(); // 清空表單
         document.getElementById("successMessage").classList.remove("hidden"); // 顯示成功訊息
   
-        // 🚩🚩【新增這段推送 dataLayer 事件給 GTM】
+        // ✅ 推送到 GTM 的 dataLayer 事件
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-          'event': 'formSubmit', 
-          'formName': '聯絡表單'  // 自訂表單名稱方便在GTM辨識
+          event: 'formSubmit',
+          formName: '聯絡表單'
         });
       })
-      .catch(error => console.error("錯誤：", error));
+      .catch(error => {
+        console.error("❌ 表單送出失敗：", error);
+        alert("表單送出失敗，請稍後再試或聯絡客服！");
+      });
     });
   </script>
   
