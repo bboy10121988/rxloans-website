@@ -74,33 +74,34 @@
           message: document.getElementById("message").value
         };
   
-        // ✅ 改這裡：使用第七版 GAS 網址
+        // ✅ 加上 mode: "no-cors" 解決 CORS 問題
         fetch("https://script.google.com/macros/s/AKfycbzzAy28qFmN6NGbPAkOjmfwxeIQJ1CNByErAFeUZbRi_95jiSnp4GSnVQATxybEwLB7CA/exec", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
+          mode: "no-cors",
           body: JSON.stringify(formData)
         })
-          .then(response => response.text())
-          .then(data => {
-            console.log("✅ 表單送出成功：", data);
-            form.reset();
-            document.getElementById("successMessage").classList.remove("hidden");
+        .then(() => {
+          console.log("✅ 表單送出成功（no-cors 模式）");
+          form.reset();
+          document.getElementById("successMessage").classList.remove("hidden");
   
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-              event: "formSubmit",
-              formName: "聯絡表單"
-            });
-          })
-          .catch(error => {
-            console.error("❌ 表單送出失敗：", error);
-            alert("表單送出失敗，請稍後再試或聯絡客服！");
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "formSubmit",
+            formName: "聯絡表單"
           });
+        })
+        .catch(error => {
+          console.error("❌ 表單送出失敗：", error);
+          alert("表單送出失敗，請稍後再試或聯絡客服！");
+        });
       });
     });
   </script>
+  
   
   
   
