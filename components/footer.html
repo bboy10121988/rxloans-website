@@ -60,7 +60,7 @@
     const form = document.getElementById("contactForm");
 
     form.addEventListener("submit", function (event) {
-      event.preventDefault(); // ⛔️ 阻止表單預設送出行為（避免跳轉）
+      event.preventDefault(); // ⛔️ 阻止表單預設跳轉
 
       const formData = new FormData(form);
       const payload = {
@@ -71,20 +71,21 @@
         message: formData.get("message")
       };
 
+      // ✅ 使用 no-cors 模式，避免跨域問題
       fetch("https://script.google.com/macros/s/AKfycbzzAy28qFmN6NGbPAkOjmfwxeIQJ1CNByErAFeUZbRi_95jiSnp4GSnVQATxybEwLB7CA/exec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        mode: "no-cors", // ✅ 為避免 CORS 堵塞，這是必要的
+        mode: "no-cors",
         body: JSON.stringify(payload)
       });
 
-      // 🎉 提交後直接顯示成功訊息，不等回應（no-cors 模式不支援 then）
+      // 🎉 不等待回應，直接顯示提交成功
       form.reset();
       document.getElementById("successMessage").classList.remove("hidden");
 
-      // GA4 行為紀錄
+      // GA4 推送事件（可選）
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: "formSubmit",
@@ -93,6 +94,7 @@
     });
   });
 </script>
+
   
   
   
