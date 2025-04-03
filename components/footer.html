@@ -59,41 +59,30 @@
   document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contactForm");
 
-    form.addEventListener("submit", function (event) {
-      event.preventDefault(); // ⛔️ 阻止表單預設跳轉
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-      const formData = new FormData(form);
       const payload = {
-        name: formData.get("name"),
-        phone: formData.get("phone"),
-        line: formData.get("line"),
-        service: formData.get("service"),
-        message: formData.get("message")
+        name: document.getElementById("name").value,
+        phone: document.getElementById("phone").value,
+        line: document.getElementById("line").value,
+        service: document.getElementById("service").value,
+        message: document.getElementById("message").value
       };
 
-      // ✅ 使用 no-cors 模式，避免跨域問題
       fetch("https://script.google.com/macros/s/AKfycbzzAy28qFmN6NGbPAkOjmfwxeIQJ1CNByErAFeUZbRi_95jiSnp4GSnVQATxybEwLB7CA/exec", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        mode: "no-cors", // 💡 核心關鍵
         body: JSON.stringify(payload)
       });
 
-      // 🎉 不等待回應，直接顯示提交成功
       form.reset();
       document.getElementById("successMessage").classList.remove("hidden");
-
-      // GA4 推送事件（可選）
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "formSubmit",
-        formName: "聯絡表單"
-      });
     });
   });
 </script>
+
 
   
   
